@@ -21,37 +21,21 @@ get_header();
             <!-- News List -->
             <div class="space-y-8">
                 <?php
-                // Hardcoded news items for demonstration.
-                // In a real WordPress theme, this would typically use WP_Query to fetch posts.
-                $news_items = [
-                    [
-                        'id' => 1,
-                        'publishedAt' => '2024-07-25T00:00:00Z',
-                        'category' => 'お知らせ',
-                        'title' => '夏季休業のお知らせ',
-                        'content' => '誠に勝手ながら、下記の期間を夏季休業とさせていただきます。ご不便をおかけいたしますが、何卒ご理解ご協力のほどお願い申し上げます。',
-                    ],
-                    [
-                        'id' => 2,
-                        'publishedAt' => '2024-07-10T00:00:00Z',
-                        'category' => 'イベント',
-                        'title' => '〇〇展示会に出展します',
-                        'content' => '2024年8月1日〜3日に開催される〇〇展示会に出展いたします。皆様のご来場を心よりお待ちしております。',
-                    ],
-                    [
-                        'id' => 3,
-                        'publishedAt' => '2024-06-01T00:00:00Z',
-                        'category' => 'プレスリリース',
-                        'title' => '新製品「〇〇」をリリースしました',
-                        'content' => 'この度、新製品「〇〇」をリリースいたしました。詳細はこちらをご覧ください。',
-                    ],
-                ];
+                $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                $args = array(
+                    'post_type'      => 'post', // Default post type for news
+                    'posts_per_page' => 5,      // Number of news items per page
+                    'paged'          => $paged,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                    'post_status'    => 'publish',
+                );
 
-                if ( ! empty( $news_items ) ) : ?>
+                $news_query = new WP_Query( $args );
+
+                if ( $news_query->have_posts() ) : ?>
                     <div class="space-y-6">
-                        <?php foreach ( $news_items as $item ) :
-                            $published_date = new DateTime( $item['publishedAt'] );
-                            ?>
+                        <?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
                             <div class="card shadow-lg hover:shadow-xl transition-shadow">
                                 <div class="card-content p-8">
                                     <div class="flex items-start gap-6">
@@ -59,10 +43,10 @@ get_header();
                                         <div class="flex-shrink-0 text-center">
                                             <div class="bg-ymd-blue text-white p-4 rounded-lg">
                                                 <div class="text-3xl font-bold">
-                                                    <?php echo $published_date->format( 'd' ); ?>
+                                                    <?php echo get_the_date( 'd' ); ?>
                                                 </div>
                                                 <div class="text-sm opacity-90">
-                                                    <?php echo $published_date->format( 'Y.m' ); ?>
+                                                    <?php echo get_the_date( 'Y.m' ); ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -72,27 +56,50 @@ get_header();
                                             <div class="flex items-center gap-3 mb-4">
                                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-ymd-blue">
                                                     <svg class="w-3 h-3 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                                    <?php echo esc_html( $item['category'] ); ?>
+                                                    <?php
+                                                    $categories = get_the_category();
+                                                    if ( ! empty( $categories ) ) {
+                                                        echo esc_html( $categories[0]->name ); // Display the first category
+                                                    }
+                                                    ?>
                                                 </span>
                                                 <div class="flex items-center text-gray-500 text-sm">
                                                     <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                                    <?php echo $published_date->format( 'Y年m月d日' ); ?>
+                                                    <?php echo get_the_date( 'Y年m月d日' ); ?>
                                                 </div>
                                             </div>
 
-                                            <h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-ymd-blue transition-colors cursor-pointer">
-                                                <?php echo esc_html( $item['title'] ); ?>
+                                            <h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-ymd-blue transition-colors">
+                                                <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-ymd-blue transition-colors">
+                                                    <?php the_title(); ?>
+                                                </a>
                                             </h2>
 
                                             <div class="text-gray-600 leading-relaxed">
-                                                <p><?php echo esc_html( $item['content'] ); ?></p>
+                                                <p><?php the_excerpt(); // Use excerpt for list view ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        <?php endwhile; ?>
                     </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-8 flex justify-center">
+                        <?php
+                        echo paginate_links( array(
+                            'total'   => $news_query->max_num_pages,
+                            'current' => max( 1, get_query_var( 'paged' ) ),
+                            'prev_text' => '&laquo; 前へ',
+                            'next_text' => '次へ &raquo;',
+                            'type'      => 'list', // Render as a ul/li list
+                        ) );
+                        ?>
+                    </div>
+
+                    <?php wp_reset_postdata(); // Restore original Post Data ?>
+
                 <?php else : ?>
                     <!-- Empty state -->
                     <div class="text-center py-16">

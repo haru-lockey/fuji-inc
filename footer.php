@@ -5,11 +5,10 @@
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="text-2xl font-bold text-white mb-4 font-inter">藤工業</div>
+                    <div class="text-2xl font-bold text-white mb-4 font-inter"><?php echo esc_html( FUJI_COMPANY_NAME ); ?></div>
                     <p class="text-sm">
-                        〒455-0803<br />
-                        名古屋市港区入場2丁目411番地<br />
-                        TEL: 052-383-8783
+                        <?php echo FUJI_ADDRESS; ?><br />
+                        TEL: <?php echo esc_html( FUJI_PHONE_NUMBER ); ?>
                     </p>
                 </div>
 

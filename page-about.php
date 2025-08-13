@@ -18,7 +18,7 @@ get_header();
                     産業界の発展に貢献します
                 </h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    藤工業株式会社は、各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）、センターレスブレード・機械工具部品、耐磨治工具、レースセンター、各種工具設計製造販売を行っています。
+                    <?php echo esc_html( FUJI_COMPANY_NAME ); ?>は、各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）、センターレスブレード・機械工具部品、耐磨治工具、レースセンター、各種工具設計製造販売を行っています。
                 </p>
             </div>
 
@@ -60,7 +60,7 @@ get_header();
                             <div class="grid grid-cols-1 gap-4">
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">会社名</dt>
-                                    <dd class="text-gray-600">藤工業株式会社</dd>
+                                    <dd class="text-gray-600"><?php echo esc_html( FUJI_COMPANY_NAME ); ?></dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">設立</dt>
@@ -77,17 +77,16 @@ get_header();
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">本社所在地</dt>
                                     <dd class="text-gray-600">
-                                        〒455-0803<br />
-                                        名古屋市港区入場2丁目411番地
+                                        <?php echo FUJI_ADDRESS; ?>
                                     </dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">電話番号</dt>
-                                    <dd class="text-gray-600">052-383-8783</dd>
+                                    <dd class="text-gray-600"><?php echo esc_html( FUJI_PHONE_NUMBER ); ?></dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">FAX番号</dt>
-                                    <dd class="text-gray-600">052-384-7383</dd>
+                                    <dd class="text-gray-600"><?php echo esc_html( FUJI_FAX_NUMBER ); ?></dd>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +138,7 @@ get_header();
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <div class="mb-6">
                         <p class="text-gray-600 text-center mb-4">
-                            〒455-0803<br />
-                            名古屋市港区入場2丁目411番地
+                            <?php echo FUJI_ADDRESS; ?>
                         </p>
                         <p class="text-gray-600 text-center">
                             TEL: 052-383-8783

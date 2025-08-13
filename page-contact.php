@@ -33,61 +33,8 @@ get_header();
                             </p>
                         </div>
                         <div class="card-content p-6">
-                            <!-- Placeholder for Contact Form -->
-                            <p class="text-center text-gray-500 py-10">
-                                **お問い合わせフォームのプレースホルダー**<br>
-                                実際のフォーム機能は、WordPressのプラグイン（例: Contact Form 7, WPForms）またはカスタム開発が必要です。<br><br>
-                                以下のフィールドは表示のみです。
-                            </p>
-                            <form class="space-y-6">
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label for="name" class="font-medium">
-                                            お名前 <span class="text-red-500">*</span>
-                                        </label>
-                                        <input type="text" id="name" placeholder="山田 太郎" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
-                                    </div>
-                                    <div>
-                                        <label for="company" class="font-medium">
-                                            会社名
-                                        </label>
-                                        <input type="text" id="company" placeholder="株式会社○○○" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
-                                    </div>
-                                </div>
-
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label for="email" class="font-medium">
-                                            メールアドレス <span class="text-red-500">*</span>
-                                        </label>
-                                        <input type="email" id="email" placeholder="example@company.com" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
-                                    </div>
-                                    <div>
-                                        <label for="phone" class="font-medium">
-                                            電話番号
-                                        </label>
-                                        <input type="text" id="phone" placeholder="052-383-8783" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label for="subject" class="font-medium">
-                                        件名 <span class="text-red-500">*</span>
-                                    </label>
-                                    <input type="text" id="subject" placeholder="お問い合わせ件名をご記入ください" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
-                                </div>
-
-                                <div>
-                                    <label for="message" class="font-medium">
-                                        お問い合わせ内容 <span class="text-red-500">*</span>
-                                    </label>
-                                    <textarea id="message" placeholder="お問い合わせ内容を詳しくご記入ください。図面や仕様書がある場合は、別途メールでお送りください。" rows="6" class="mt-1 w-full p-2 border border-gray-300 rounded-md"></textarea>
-                                </div>
-
-                                <button type="submit" class="w-full bg-ymd-accent hover:bg-red-600 text-white text-lg py-3 rounded-md">
-                                    お問い合わせを送信
-                                </button>
-                            </form>
+                            <!-- WPForms Shortcode -->
+                            <?php echo do_shortcode( '[wpforms id="56"]' ); ?>
                         </div>
                     </div>
                 </div>
@@ -106,13 +53,13 @@ get_header();
                                     <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-gray-600">代表電話</p>
+                                    <p class="text-sm text-gray-600">電話番号</p>
                                     <a
-                                        href="tel:052-383-8783"
-                                        class="text-2xl font-bold text-ymd-blue hover:text-blue-700"
-                                    >
-                                        052-383-8783
-                                    </a>
+                                            href="tel:<?php echo esc_attr( FUJI_PHONE_NUMBER ); ?>"
+                                            class="text-2xl font-bold text-ymd-blue hover:text-blue-700"
+                                        >
+                                            <?php echo esc_html( FUJI_PHONE_NUMBER ); ?>
+                                        </a>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
@@ -141,8 +88,7 @@ get_header();
                                 <div>
                                     <p class="font-medium">藤工業株式会社</p>
                                     <p class="text-gray-600">
-                                        〒455-0803<br />
-                                        名古屋市港区入場2丁目411番地
+                                        <?php echo FUJI_ADDRESS; ?>
                                     </p>
                                 </div>
                             </div>
@@ -166,7 +112,7 @@ get_header();
                                         名古屋市港区入場2丁目2403
                                     </p>
                                     <p class="text-sm text-gray-500 mt-2">
-                                        TEL: 052-383-8783
+                                        TEL: <?php echo esc_html( FUJI_PHONE_NUMBER ); ?>
                                     </p>
                                 </div>
                             </div>

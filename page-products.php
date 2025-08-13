@@ -138,7 +138,7 @@ get_header();
                                 '高精度工具',
                                 '専用工具'
                             ]
-                        }
+                        ]
                     ];
 
                     foreach ( $product_categories as $index => $product ) {

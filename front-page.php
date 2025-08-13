@@ -28,11 +28,11 @@ get_header();
             <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 機械加工の最適解は、
                 <br />
-                <span class="text-ymd-accent font-inter">藤工業株式会社</span>
+                <span class="text-ymd-accent font-inter"><?php echo esc_html( FUJI_COMPANY_NAME ); ?></span>
             </h1>
 
             <p class="text-xl md:text-2xl mb-4 font-light leading-relaxed">
-                各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）の設計、製造、販売を通じて、
+                各種治工具、超硬合金、セラミック、PCDの設計、製造、販売を通じて、
                 <br />
                 モノづくりを動かす原動力となる、それが藤工業株式会社です。
             </p>
@@ -43,11 +43,6 @@ get_header();
                 お客様の多様なニーズに応えるオーダーメイドの製品を提供します。
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="<?php echo esc_url( site_url( '/services' ) ); ?>" class="inline-block border-2 border-white text-white hover:bg-white hover:text-ymd-blue text-lg font-medium px-8 py-4 bg-transparent rounded">
-                    サービス資料
-                </a>
-            </div>
         </div>
     </div>
 </section>

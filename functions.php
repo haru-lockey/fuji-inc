@@ -3,6 +3,9 @@
  * Theme functions and definitions
  */
 
+// Include theme constants
+require_once get_template_directory() . '/constants.php';
+
 function metalworks_theme_setup() {
     // Register navigation menus
     register_nav_menus( array(
@@ -48,7 +51,7 @@ function metalworks_theme_scripts() {
     wp_enqueue_script(
         'metalworks-theme-mobile-menu',
         get_template_directory_uri() . '/assets/main.js',
-        array(),
+        array('metalworks-theme-main-scripts'), // Dependent on main scripts
         filemtime( $theme_dir . '/assets/main.js' ),
         true
     );
