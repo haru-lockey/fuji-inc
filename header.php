@@ -4,6 +4,28 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <style>
+        /* Modern Mobile Menu Styles */
+        #mobile-menu ul li a {
+            display: block;
+            padding: 0.75rem 1rem; /* py-3 px-4 equivalent */
+            color: #333; /* Darker text for better contrast */
+            font-weight: 500; /* Medium weight */
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            border-radius: 0.25rem; /* subtle rounded corners */
+        }
+
+        #mobile-menu ul li a:hover {
+            background-color: #f0f0f0; /* Light grey background on hover */
+            color: #000; /* Darker text on hover */
+        }
+
+        /* Ensure the menu content itself has some padding */
+        #mobile-menu > div > div.pt-2.pb-3.space-y-1 {
+            padding-left: 1rem; /* px-4 */
+            padding-right: 1rem; /* px-4 */
+        }
+    </style>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -54,18 +76,30 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="lg:hidden hidden" id="mobile-menu">
-        <div class="pt-2 pb-3 space-y-1">
-            <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'container'      => false,
-                        'items_wrap'     => '<ul class="flex flex-col space-y-2 px-2">%3$s</ul>',
-                        'fallback_cb'    => false,
-                    ) );
-                }
-            ?>
+    <div class="lg:hidden fixed inset-0 z-40 overflow-hidden transition-all duration-300 ease-in-out transform translate-x-full" id="mobile-menu">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 ease-in-out" id="mobile-menu-overlay"></div>
+        <div class="relative w-64 max-w-full bg-white h-full shadow-xl ml-auto">
+            <div class="flex justify-end p-4">
+                <button id="mobile-menu-close" type="button" class="text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ymd-blue">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="pt-2 pb-3 space-y-1">
+                <?php
+                    if ( has_nav_menu( 'primary' ) ) {
+                        wp_nav_menu( array(
+                            'theme_location' => 'primary',
+                            'container'      => false,
+                            'items_wrap'     => '<ul class="flex flex-col space-y-2 px-2">%3$s</ul>',
+                            'fallback_cb'    => false,
+                        ) );
+                    }
+                ?>
+            </div>
         </div>
     </div>
 </header>
