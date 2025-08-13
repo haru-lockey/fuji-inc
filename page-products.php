@@ -13,10 +13,10 @@ get_header();
             <div class="text-center mb-16">
                 <h1 class="text-5xl font-bold text-gray-900 mb-8">取り扱い製品</h1>
                 <h2 class="text-3xl font-bold text-ymd-blue mb-6">
-                    PCD・超硬・セラミック耐摩耗工具・治具の専門家
+                    各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）の専門家
                 </h2>
                 <p class="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
-                    藤工業株式会社は、PCD（焼結ダイヤモンド）、超硬、セラミックといった特殊素材を用いた耐摩耗工具・治具の設計、製造、販売を行っています。長年の経験と高精度加工技術で、お客様の多様なニーズにお応えし、最適な製品を提供します。
+                    藤工業株式会社は、各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）など、幅広い素材と製品の設計、製造、販売を行っています。長年の経験と高精度加工技術で、お客様の多様なニーズにお応えし、最適な製品を提供します。
                 </p>
             </div>
 
@@ -29,46 +29,116 @@ get_header();
                     $product_categories = [
                         [
                             'id' => '01',
-                            'title' => 'センターレスブレード',
-                            'subtitle' => 'Centerless Blades',
-                            'description' => 'PCD、超硬、セラミック製の高精度センターレスブレード。研削加工の効率と精度を向上させます。',
+                            'title' => '各種治工具',
+                            'subtitle' => 'Various Tools and Jigs',
+                            'description' => 'お客様の多様なニーズに応える、様々な治工具の設計、製造、販売を行っています。',
                             'image' => 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
                             'color' => 'bg-ymd-blue',
                             'details' => [
-                                'PCDセンターレスブレード',
-                                '超硬センターレスブレード',
-                                'セラミックセンターレスブレード',
-                                '各種研削加工用ブレード'
+                                'オーダーメイド治工具',
+                                '精密加工用治工具',
+                                '組立用治工具',
+                                '検査用治工具'
                             ]
                         ],
                         [
                             'id' => '02',
-                            'title' => '耐摩耗治具',
-                            'subtitle' => 'Wear-Resistant Jigs',
-                            'description' => 'PCD、超硬、セラミック製の耐摩耗治具。長寿命で安定した加工精度を維持し、生産効率を向上させます。',
+                            'title' => '超硬合金',
+                            'subtitle' => 'Carbide Alloys',
+                            'description' => '高硬度、高耐摩耗性を誇る超硬合金製品を提供。切削工具から耐摩耗部品まで幅広く対応します。',
                             'image' => 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
                             'color' => 'bg-ymd-accent',
                             'details' => [
-                                'PCD耐摩耗治具',
-                                '超硬耐摩耗治具',
-                                'セラミック耐摩耗治具',
-                                '各種専用治具'
+                                '超硬切削工具',
+                                '超硬耐摩耗部品',
+                                '超硬金型部品',
+                                '超硬特殊形状加工'
                             ]
                         ],
                         [
                             'id' => '03',
-                            'title' => '特殊旋盤用センター',
-                            'subtitle' => 'Special Lathe Centers',
-                            'description' => 'PCD、超硬、セラミック製の特殊旋盤用センター。高精度な旋削加工をサポートし、製品品質を向上させます。',
+                            'title' => 'セラミック',
+                            'subtitle' => 'Ceramics',
+                            'description' => '耐熱性、耐食性、絶縁性に優れたセラミック製品。特殊環境下での使用に最適です。',
                             'image' => 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
                             'color' => 'bg-green-600',
                             'details' => [
-                                'PCD特殊旋盤用センター',
-                                '超硬特殊旋盤用センター',
-                                'セラミック特殊旋盤用センター',
-                                '各種特殊加工用センター'
+                                'セラミック耐摩耗部品',
+                                'セラミック絶縁部品',
+                                'セラミック構造部品',
+                                'セラミック特殊形状加工'
                             ]
-                        ]
+                        ],
+                        [
+                            'id' => '04',
+                            'title' => 'PCD（ダイヤモンド）',
+                            'subtitle' => 'Polycrystalline Diamond',
+                            'description' => 'PCD（焼結ダイヤモンド）を用いた超硬度工具・部品。高精度、長寿命を実現します。',
+                            'image' => 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+                            'color' => 'bg-ymd-blue',
+                            'details' => [
+                                'PCD切削工具',
+                                'PCD耐摩耗部品',
+                                'PCD金型部品',
+                                'PCD特殊形状加工'
+                            ]
+                        ],
+                        [
+                            'id' => '05',
+                            'title' => 'センターレスブレード・機械工具部品',
+                            'subtitle' => 'Centerless Blades & Machine Tool Parts',
+                            'description' => '高精度な研削加工を支えるセンターレスブレードと、各種機械工具部品を提供します。',
+                            'image' => 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+                            'color' => 'bg-ymd-accent',
+                            'details' => [
+                                'センターレスブレード',
+                                '各種機械工具部品',
+                                '研削盤部品',
+                                '専用機部品'
+                            ]
+                        ],
+                        [
+                            'id' => '06',
+                            'title' => '耐磨治工具',
+                            'subtitle' => 'Wear-Resistant Tools and Jigs',
+                            'description' => '長期間の使用に耐える高耐久性の耐磨治工具。生産ラインの安定稼働に貢献します。',
+                            'image' => 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+                            'color' => 'bg-green-600',
+                            'details' => [
+                                '高硬度耐磨治工具',
+                                '高耐食耐磨治工具',
+                                '特殊コーティング耐磨治工具',
+                                '精密耐磨治工具'
+                            ]
+                        ],
+                        [
+                            'id' => '07',
+                            'title' => 'レースセンター',
+                            'subtitle' => 'Lathe Centers',
+                            'description' => '旋盤加工における高精度なワーク保持を実現するレースセンター。',
+                            'image' => 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+                            'color' => 'bg-ymd-blue',
+                            'details' => [
+                                '標準レースセンター',
+                                '特殊レースセンター',
+                                'PCDチップ付レースセンター',
+                                '超硬チップ付レースセンター'
+                            ]
+                        ],
+                        [
+                            'id' => '08',
+                            'title' => '各種工具設計製造販売',
+                            'subtitle' => 'Various Tool Design, Manufacturing & Sales',
+                            'description' => 'お客様のニーズに合わせた最適な工具の設計から製造、販売まで一貫して行います。',
+                            'image' => 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+                            'color' => 'bg-ymd-accent',
+                            'details' => [
+                                'オーダーメイド工具',
+                                '特殊形状工具',
+                                '高精度工具',
+                                '専用工具'
+                            ]
+                        }
                     ];
 
                     foreach ( $product_categories as $index => $product ) {

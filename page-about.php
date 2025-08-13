@@ -18,7 +18,7 @@ get_header();
                     産業界の発展に貢献します
                 </h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    藤工業株式会社は、PCD（焼結ダイヤモンド）、超硬、セラミックといった特殊素材を用いた耐摩耗工具・治具の設計、製造、販売を一貫して手掛けています。長年の経験で培われた高精度加工技術と、お客様のニーズに応える柔軟な対応力で、多岐にわたる産業分野の課題解決に貢献しています。
+                    藤工業株式会社は、各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）、センターレスブレード・機械工具部品、耐磨治工具、レースセンター、各種工具設計製造販売を行っています。
                 </p>
             </div>
 
@@ -64,30 +64,30 @@ get_header();
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">設立</dt>
-                                    <dd class="text-gray-600">昭和48年10月</dd>
+                                    <dd class="text-gray-600">昭和39年6月</dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">資本金</dt>
-                                    <dd class="text-gray-600">1,000万円</dd>
+                                    <dd class="text-gray-600">2,400万円</dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">代表者</dt>
-                                    <dd class="text-gray-600">代表取締役　藤井 康弘</dd>
+                                    <dd class="text-gray-600">伊藤豊則</dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">本社所在地</dt>
                                     <dd class="text-gray-600">
-                                        〒455-0022<br />
-                                        愛知県名古屋市港区竜宮町5番地
+                                        〒455-0803<br />
+                                        名古屋市港区入場2丁目411番地
                                     </dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">電話番号</dt>
-                                    <dd class="text-gray-600">052-651-5151</dd>
+                                    <dd class="text-gray-600">052-383-8783</dd>
                                 </div>
                                 <div class="border-b pb-4">
                                     <dt class="font-bold text-ymd-dark">FAX番号</dt>
-                                    <dd class="text-gray-600">052-651-5152</dd>
+                                    <dd class="text-gray-600">052-384-7383</dd>
                                 </div>
                             </div>
                         </div>
@@ -101,29 +101,31 @@ get_header();
 
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h3 class="text-xl font-bold text-ymd-blue mb-6">
-                        PCD・超硬・セラミック耐摩耗工具・治具の設計、製造、販売
+                        各種治工具、超硬合金、セラミック、PCD（ダイヤモンド）の設計、製造、販売
                     </h3>
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div>
                             <h4 class="font-bold text-ymd-dark mb-4">事業内容</h4>
                             <ul class="text-gray-600 text-sm space-y-1">
-                                <li>• PCD耐摩耗工具・治具の設計、製造、販売</li>
-                                <li>• 超硬耐摩耗工具・治具の設計、製造、販売</li>
-                                <li>• セラミック耐摩耗工具・治具の設計、製造、販売</li>
-                                <li>• センターレスブレード</li>
-                                <li>• 特殊旋盤用センター</li>
+                                <li>• 各種治工具</li>
+                                <li>• 超硬合金</li>
+                                <li>• セラミック</li>
+                                <li>• PCD（ダイヤモンド）</li>
+                                <li>• センターレスブレード・機械工具部品</li>
+                                <li>• 耐磨治工具</li>
+                                <li>• レースセンター</li>
+                                <li>• 各種工具設計製造販売</li>
                             </ul>
                         </div>
 
                         <div>
                             <h4 class="font-bold text-ymd-dark mb-4">主要取引先</h4>
                             <ul class="text-gray-600 text-sm space-y-1">
-                                <li>• 株式会社デンソー</li>
-                                <li>• トヨタ自動車株式会社</li>
-                                <li>• 本田技研工業株式会社</li>
-                                <li>• 三菱重工業株式会社</li>
-                                <li>他多数</li>
+                                <li>• タンガロイ株式会社</li>
+                                <li>• 中央発篠株式会社</li>
+                                <li>• ミクロン精密株式会社</li>
+                                <li>• 富士精工株式会社他120社</li>
                             </ul>
                         </div>
                     </div>
@@ -138,18 +140,30 @@ get_header();
                     <div class="bg-white p-6 rounded-xl shadow-lg">
                         <ul class="space-y-4">
                             <li class="flex gap-4">
-                                <span class="font-bold text-ymd-dark min-w-[120px]">昭和48年10月</span>
+                                <span class="font-bold text-ymd-dark min-w-[120px]">昭和28年3月</span>
                                 <div>
-                                    <p>藤工業設立</p>
+                                    <p>名古屋市中区橘一丁目に藤工業設立</p>
                                 </div>
                             </li>
                             <li class="flex gap-4">
-                                <span class="font-bold text-ymd-dark min-w-[120px]">平成2年10月</span>
-                                <p>藤工業株式会社に組織変更</p>
+                                <span class="font-bold text-ymd-dark min-w-[120px]">昭和39年6月</span>
+                                <p>藤工業株式会社組織変更</p>
                             </li>
                             <li class="flex gap-4">
-                                <span class="font-bold text-ymd-dark min-w-[120px]">平成10年10月</span>
-                                <p>本社工場を現在地に移転</p>
+                                <span class="font-bold text-ymd-dark min-w-[120px]">昭和59年4月</span>
+                                <p>名古屋市中川区上高畑一丁目80番地に移転</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="font-bold text-ymd-dark min-w-[120px]">昭和61年12月</span>
+                                <p>資本金800万円に増資</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="font-bold text-ymd-dark min-w-[120px]">平成4年11月</span>
+                                <p>名古屋市港区入場二丁目411番地に移転</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="font-bold text-ymd-dark min-w-[120px]">平成6年6月</span>
+                                <p>資本金2,400万円に増資</p>
                             </li>
                         </ul>
                     </div>

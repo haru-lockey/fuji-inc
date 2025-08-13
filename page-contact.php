@@ -66,7 +66,7 @@ get_header();
                                         <label for="phone" class="font-medium">
                                             電話番号
                                         </label>
-                                        <input type="text" id="phone" placeholder="052-776-3311" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
+                                        <input type="text" id="phone" placeholder="052-383-8783" class="mt-1 w-full p-2 border border-gray-300 rounded-md">
                                     </div>
                                 </div>
 
@@ -108,7 +108,7 @@ get_header();
                                 <div>
                                     <p class="text-sm text-gray-600">代表電話</p>
                                     <a
-                                        href="tel:052-776-3311"
+                                        href="tel:052-383-8783"
                                         class="text-2xl font-bold text-ymd-blue hover:text-blue-700"
                                     >
                                         052-383-8783
