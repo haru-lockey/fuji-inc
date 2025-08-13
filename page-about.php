@@ -24,7 +24,7 @@ get_header();
 
             <!-- Mission Section -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">経営理念</h2>
+                <h2 id="mission" class="text-3xl font-bold text-center text-gray-900 mb-12">経営理念</h2>
 
                 <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
                     <h3 class="text-2xl font-bold text-ymd-blue text-center mb-8">
@@ -44,7 +44,7 @@ get_header();
 
             <!-- Company Overview -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">会社概要</h2>
+                <h2 id="company-overview" class="text-3xl font-bold text-center text-gray-900 mb-12">会社概要</h2>
 
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8">
@@ -97,7 +97,7 @@ get_header();
 
             <!-- Business Overview -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">事業内容</h2>
+                <h2 id="business-overview" class="text-3xl font-bold text-center text-gray-900 mb-12">事業内容</h2>
 
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h3 class="text-xl font-bold text-ymd-blue mb-6">
@@ -128,6 +128,37 @@ get_header();
                                 <li>• 富士精工株式会社他120社</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Access Section -->
+            <section class="mb-16">
+                <h2 id="access" class="text-3xl font-bold text-center text-gray-900 mb-12">アクセス</h2>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <p class="text-gray-600 text-center mb-4">
+                            〒455-0803<br />
+                            名古屋市港区入場2丁目411番地
+                        </p>
+                        <p class="text-gray-600 text-center">
+                            TEL: 052-383-8783
+                        </p>
+                    </div>
+                    <div>
+                        <!-- Google Map Embed Code Here -->
+                        <!-- Replace the iframe src with your actual Google Maps embed code -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.0000000000005!2d136.86000000000000!3d35.10000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDA2JzAwLjAiTiAxMzbCsDUxJzAwLjAiRTA!5e0!3m2!1sen!2sus!4v1678888888888!5m2!1sen!2sus"
+                            width="600"
+                            height="675"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full"
+                        ></iframe>
                     </div>
                 </div>
             </section>
