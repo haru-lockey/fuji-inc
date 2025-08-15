@@ -26,4 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuCloseButton.addEventListener('click', closeMenu);
         mobileMenuOverlay.addEventListener('click', closeMenu); // Close when clicking overlay
     }
+
+    // --- Mobile Submenu Toggle Logic ---
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        const submenuToggles = mobileMenu.querySelectorAll('.mobile-submenu-toggle');
+
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+
+                // The submenu is the next element sibling of the li
+                const submenu = this.closest('li.menu-item-has-children').querySelector('.sub-menu');
+                if (submenu) {
+                    submenu.classList.toggle('hidden');
+                }
+
+                const svg = this.querySelector('svg');
+                if (svg) {
+                    svg.classList.toggle('rotate-180');
+                }
+            });
+        });
+    }
 });

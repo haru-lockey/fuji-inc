@@ -25,6 +25,43 @@
             padding-left: 1rem; /* px-4 */
             padding-right: 1rem; /* px-4 */
         }
+
+        /* Hide contact button on smaller screens */
+        @media (max-width: 767px) {
+            a.bg-ymd-accent[href="/contact"] {
+                display: none;
+            }
+        }
+
+        /* Modern Dropdown Menu Styles */
+        .sub-menu {
+            opacity: 0;
+            transform: translateY(0.5rem);
+            transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+            pointer-events: none;
+            display: none;
+        }
+
+        .group:hover > .sub-menu,
+        .group:focus-within > .sub-menu {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            display: block;
+        }
+
+        /* Animate dropdown arrow */
+        .group > a > svg {
+            transition: transform 150ms ease-in-out;
+        }
+
+        .group:hover > a > svg {
+            transform: rotate(180deg);
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body <?php body_class(); ?>>
@@ -48,16 +85,13 @@
                         'container'      => false,
                         'items_wrap'     => '<ul class="flex items-center space-x-8">%3$s</ul>',
                         'fallback_cb'    => false,
+                        'walker'         => new Tailwind_Nav_Walker(),
                     ) );
                 }
                 ?>
             </nav>
 
             <div class="flex items-center space-x-4">
-                <a href="tel:052-383-8783" class="hidden md:flex items-center text-ymd-blue font-medium hover:text-blue-700 transition-colors">
-                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <span>052-383-8783</span>
-                </a>
                 <a href="/contact" class="inline-block bg-ymd-accent hover:bg-red-600 transition-colors text-white font-bold py-2 px-4 rounded">
                     お問い合わせ
                 </a>
@@ -96,6 +130,8 @@
                             'container'      => false,
                             'items_wrap'     => '<ul class="flex flex-col space-y-2 px-2">%3$s</ul>',
                             'fallback_cb'    => false,
+                            'walker'         => new Tailwind_Nav_Walker(),
+                            'is_mobile'      => true,
                         ) );
                     }
                 ?>

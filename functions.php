@@ -6,6 +6,9 @@
 // Include theme constants
 require_once get_template_directory() . '/constants.php';
 
+// Include custom nav walker
+require_once get_template_directory() . '/tailwind-nav-walker.php';
+
 function metalworks_theme_setup() {
     // Register navigation menus
     register_nav_menus( array(
@@ -57,4 +60,74 @@ function metalworks_theme_scripts() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'metalworks_theme_scripts' );
+
+
+function metalworks_setup_initial_menu() {
+    $menu_name = 'Primary Navigation';
+    $menu_location = 'primary';
+
+    if ( ! has_nav_menu( $menu_location ) ) {
+        $menu_exists = wp_get_nav_menu_object( $menu_name );
+
+        if ( ! $menu_exists ) {
+            $menu_id = wp_create_nav_menu( $menu_name );
+
+            $menu_structure = [
+                ['title' => '会社案内', 'slug' => 'about', 'children' => [
+                    ['title' => '会社概要', 'slug' => 'about'],
+                    ['title' => '品質方針', 'slug' => 'quality'],
+                ]],
+                ['title' => '事業案内', 'slug' => 'services', 'children' => [
+                     ['title' => '設備紹介', 'slug' => 'equipment'],
+                ]],
+                ['title' => '製品紹介', 'slug' => 'products', 'children' => [
+                    ['title' => '製品一覧', 'slug' => 'product-list'],
+                    ['title' => '加工材料', 'slug' => 'material'],
+                ]],
+                ['title' => 'お知らせ', 'slug' => 'news'],
+                ['title' => 'お問い合わせ', 'slug' => 'contact'],
+            ];
+
+            foreach ( $menu_structure as $item ) {
+                $page = isset($item['slug']) ? get_page_by_path( $item['slug'] ) : null;
+                $url = '#';
+                if ($page) {
+                    $url = get_permalink($page->ID);
+                } elseif (isset($item['url'])) {
+                    $url = $item['url'];
+                }
+
+                $parent_id = wp_update_nav_menu_item($menu_id, 0, [
+                    'menu-item-title' => $item['title'],
+                    'menu-item-url' => $url,
+                    'menu-item-status' => 'publish',
+                ]);
+
+                if ( ! empty( $item['children'] ) && $parent_id ) {
+                    foreach ( $item['children' ] as $child_item ) {
+                        $child_page = isset($child_item['slug']) ? get_page_by_path( $child_item['slug'] ) : null;
+                        if ($child_page) {
+                            wp_update_nav_menu_item($menu_id, 0, [
+                                'menu-item-title' => $child_item['title'],
+                                'menu-item-object-id' => $child_page->ID,
+                                'menu-item-object' => 'page',
+                                'menu-item-parent-id' => $parent_id,
+                                'menu-item-status' => 'publish',
+                            ]);
+                        }
+                    }
+                }
+            }
+        }
+
+        $menu_object = wp_get_nav_menu_object( $menu_name );
+        if ($menu_object) {
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations[$menu_location] = $menu_object->term_id;
+            set_theme_mod( 'nav_menu_locations', $locations );
+        }
+    }
+}
+add_action( 'init', 'metalworks_setup_initial_menu' );
+
 ?>
